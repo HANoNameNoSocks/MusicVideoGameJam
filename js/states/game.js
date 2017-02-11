@@ -47,13 +47,6 @@ Game.prototype.update = function() {
         this.beatCounter++;
     }
 
-
-    var me = this;
-    addEventListener("keyup", function (e) {
-        STATE_MANAGER.switchToState("gameover");
-    }, false);
-
->>>>>>> fdd483b6755e4c08af3e342e90a11154413dae9e
 };
 
 Game.prototype.displayNote = function(note){
