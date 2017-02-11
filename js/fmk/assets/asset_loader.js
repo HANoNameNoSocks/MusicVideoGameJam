@@ -11,6 +11,10 @@ AssetLoader.prototype.load = function() {
     this._loadImage("background", "resources/img/background.png", 512, 480);
     this._loadImage("title", "resources/img/title.png", 512, 480);
     this._loadImage("gameover", "resources/img/gameover.png", 512, 480);
+    this._loadImage("top", "resources/img/top.png", ARROW_WIDTH, ARROW_HEIGHT);
+    this._loadImage("bottom", "resources/img/bottom.png", ARROW_WIDTH, ARROW_HEIGHT);
+    this._loadImage("left", "resources/img/left.png", ARROW_WIDTH, ARROW_HEIGHT);
+    this._loadImage("right", "resources/img/right.png", ARROW_WIDTH, ARROW_HEIGHT);
 };
 
 AssetLoader.prototype.getImage = function(name) {
