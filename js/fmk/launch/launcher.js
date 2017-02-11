@@ -8,30 +8,13 @@ function Launcher() {
     this._init();
 };
 
-durationBetweenTwoBeat = (60 / BPM / 4 )* 1000 ;
-timeAtLastBeat = 0;
-counter = durationBetweenTwoBeat;
-
 Launcher.prototype.run = function() {
     if (ASSET_MANAGER.isReady) {
         if (GAME === null) {
             GAME = new Game();
-            GAME.init();
         } else {
-            if(counter >= durationBetweenTwoBeat){
-                //BEAT HAPPENED
-                console.log("BEAT ! "+counter);
-                counter=0;
-                timeAtLastBeat = Date.now();
-                GAME.update(true);
-            }
-            else{
-                console.log("COUNTER ! " +counter);
-                counter = Date.now() - timeAtLastBeat;
-                GAME.update(false);
-            }
-                RENDERER.render(); 
-
+            GAME.update();
+            RENDERER.render(); 
         }   
     }
     
@@ -46,7 +29,6 @@ Launcher.prototype._init = function() {
 
 Launcher.prototype._load = function() {
     ASSET_MANAGER.load();
-
 };
 
 Launcher.prototype._initTools = function() {
