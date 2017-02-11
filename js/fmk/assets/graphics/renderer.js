@@ -19,6 +19,7 @@ Renderer.prototype.render = function() {
         );
     }
 
+    this.renderables = null;
     this.renderables = [];
 };
 
