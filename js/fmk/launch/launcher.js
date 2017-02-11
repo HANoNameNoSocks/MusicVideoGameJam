@@ -2,6 +2,7 @@ function Launcher() {
     CTX = null;
     LOGGER = null;
     ASSET_MANAGER = null;
+    STATE_MANAGER = null;
     RENDERER = null;
     GAME = null;
 
@@ -10,14 +11,14 @@ function Launcher() {
 
 Launcher.prototype.run = function() {
     if (ASSET_MANAGER.isReady) {
-        if (GAME === null) {
-            GAME = new Game();
+        if (STATE_MANAGER === null) {
+            STATE_MANAGER = new StateManager();
+            STATE_MANAGER.update();
         } else {
-            GAME.update();
-            RENDERER.render(); 
-        }   
+            STATE_MANAGER.update();
+        }
     }
-    
+    RENDERER.render();
     requestAnimationFrame(LAUNCHER.run);
 };
 
@@ -39,15 +40,11 @@ Launcher.prototype._initTools = function() {
 
 Launcher.prototype._initCanvas = function() {
     LOGGER.log("Initializing canvas");
-
     var canvas = document.createElement("canvas");
     canvas.setAttribute("id", "game_canvas");
-
     canvas.width = CANVAS_WIDTH;
     canvas.height = CANVAS_HEIGHT;
-
     CTX = canvas.getContext(CANVAS_CONTEXT);
-
     document.body.appendChild(canvas);
     this._manageCrossBrowser();
     this._overrideCSS();

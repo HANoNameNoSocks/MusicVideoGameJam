@@ -9,8 +9,8 @@ AssetLoader.prototype.load = function() {
     LOGGER.log("loading assets");
 
     this._loadImage("background", "resources/img/background.png", 512, 480);
-    this._loadImage("hero_walk_left", "resources/img/hero_walk_left.png", 65, 46);  
-    this._loadImage("hero_walk_right", "resources/img/hero_walk_right.png", 65, 46);  
+    this._loadImage("title", "resources/img/title.png", 512, 480);
+    this._loadImage("gameover", "resources/img/gameover.png", 512, 480);
 };
 
 AssetLoader.prototype.getImage = function(name) {
