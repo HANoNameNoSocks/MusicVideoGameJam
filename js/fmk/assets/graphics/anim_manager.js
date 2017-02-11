@@ -14,6 +14,13 @@ AnimManager.prototype.createAnimations = function() {
     frames[0] = new Frame(ASSET_MANAGER.getCrop("hero_walk_left_0"), 10);
     frames[1] = new Frame(ASSET_MANAGER.getCrop("hero_walk_left_1"), 10);
     frames[2] = new Frame(ASSET_MANAGER.getCrop("hero_walk_left_2"), 10);
+
+    var frames = [];
+    frames[0] = new Frame(ASSET_MANAGER.getCrop("rapper_0"), 10);
+    frames[1] = new Frame(ASSET_MANAGER.getCrop("rapper_1"), 10);
+    frames[2] = new Frame(ASSET_MANAGER.getCrop("rapper_2"), 10);
+    this.animations["rapper"] = new Anim(frames);
+
     this.animations["hero_walk_left"] = new Anim(frames);
 };
 

@@ -11,6 +11,7 @@ AssetLoader.prototype.load = function() {
     this._loadImage("background", "resources/img/background.png", 512, 480);
     this._loadImage("hero_walk_left", "resources/img/hero_walk_left.png", 65, 46);  
     this._loadImage("hero_walk_right", "resources/img/hero_walk_right.png", 65, 46);  
+    this._loadImage("rapper", "resources/img/rapper.png", 65, 46);
 };
 
 AssetLoader.prototype.getImage = function(name) {
