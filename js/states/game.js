@@ -5,10 +5,9 @@ function Game() {
 Game.prototype.update = function() {
     this.background.render(0, 0);
 
-    var me = this;
-    addEventListener("keyup", function (e) {
+    if (INPUT_MANAGER.inputs.win) {
         STATE_MANAGER.switchToState("gameover");
-    }, false);
+    }
 };
 
 Game.prototype.reset = function() {

@@ -10,6 +10,7 @@ StateManager.prototype.update = function() {
 };
 
 StateManager.prototype.switchToState = function(name) {
+    INPUT_MANAGER.resetInputs();
     this.currentState.reset();
     this.currentState = null;
     this.currentState = this.states[name];

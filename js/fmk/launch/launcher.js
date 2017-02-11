@@ -3,6 +3,7 @@ function Launcher() {
     LOGGER = null;
     ASSET_MANAGER = null;
     STATE_MANAGER = null;
+    INPUT_MANAGER = null;
     RENDERER = null;
     GAME = null;
 
@@ -36,6 +37,7 @@ Launcher.prototype._initTools = function() {
     LOGGER = new Logger();
     RENDERER = new Renderer();
     ASSET_MANAGER = new AssetManager();
+    INPUT_MANAGER = new InputManager();
 };
 
 Launcher.prototype._initCanvas = function() {

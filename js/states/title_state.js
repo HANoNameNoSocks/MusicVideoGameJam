@@ -5,10 +5,9 @@ function TitleState() {
 TitleState.prototype.update = function() {
     this.background.render(0, 0);
 
-    var me = this;
-    addEventListener("keyup", function (e) {
+    if (INPUT_MANAGER.inputs.start) {
         STATE_MANAGER.switchToState("game");
-    }, false);
+    }
 };
 
 TitleState.prototype.reset = function() {
