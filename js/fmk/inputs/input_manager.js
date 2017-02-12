@@ -6,8 +6,16 @@ function InputManager() {
 
 InputManager.prototype.resetInputs = function() {
     this.inputs = {
-        win : false,
+        // title screen
         start : false,
+
+        // game
+        up : false,
+        down : false,
+        left : false,
+        right : false,
+
+        // score screen
         restart : false
     };
 };
