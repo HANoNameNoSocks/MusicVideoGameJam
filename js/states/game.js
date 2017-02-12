@@ -11,6 +11,7 @@ function Game() {
     this.beatManager = new BeatManager();
     this.noteManager = new NoteManager();
     this.audio = new Audio('resources/sounds/neutral_blip.wav');
+    this.music = new Audio('resources/sounds/music.wav');
 
     //the beat here is a BPM / 4
     this.beatCounter=0;
@@ -30,9 +31,12 @@ Game.prototype.update = function() {
 
 
     if(this.beatManager.isOnBeat()){
+        if(this.beatCounter==16 )
+            this.music.play();
 
-        if(this.beatCounter > 0 && this.beatCounter % 4 == 0)
+        if(this.beatCounter % 4 == 0){
             this.audio.play();
+        }
 
         if(this.currentNote != null && this.currentNote.active == true ){
             this.currentNote.update();
@@ -77,4 +81,6 @@ Game.prototype.displayNote = function(note){
 Game.prototype.reset = function() {
     this.beatCounter = 0;
     this.noteManager = new NoteManager();
+    this.music.pause();
+    this.music.currentTime =0;
 };

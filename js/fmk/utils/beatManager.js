@@ -1,4 +1,5 @@
 function BeatManager(){
+    this.beatCounter==0;
     this.durationBetweenTwoBeat = (60 / BPM / 4) * 1000;
     this.timeAtLastBeat;
     this.counter = this.durationBetweenTwoBeat;
@@ -7,7 +8,8 @@ function BeatManager(){
 BeatManager.prototype.isOnBeat = function() {
     if(this.counter >= this.durationBetweenTwoBeat){
         //BEAT HAPPENED
-        this.counter=0;
+        console.log("BEAT AT : " + this.counter + " / "+ this.durationBetweenTwoBeat);
+        this.counter= this.counter - this.durationBetweenTwoBeat;
         this.timeAtLastBeat = Date.now();
         return true;
     }
