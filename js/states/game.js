@@ -10,6 +10,7 @@ function Game() {
 
     this.beatManager = new BeatManager();
     this.noteManager = new NoteManager();
+    this.audio = new Audio('resources/sounds/neutral_blip.wav');
 
     //the beat here is a BPM / 4
     this.beatCounter=0;
@@ -29,6 +30,9 @@ Game.prototype.update = function() {
 
 
     if(this.beatManager.isOnBeat()){
+
+        if(this.beatCounter > 0 && this.beatCounter % 4 == 0)
+            this.audio.play();
 
         if(this.currentNote != null && this.currentNote.active == true ){
             this.currentNote.update();
