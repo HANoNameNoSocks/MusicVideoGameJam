@@ -18,7 +18,7 @@ NoteManager.prototype.getNotes = function(){
 
     var notes = [];
 
-    notes.push( new Note('T', 0, false) );
+/*    notes.push( new Note('T', 0, false) );
     notes.push( new Note('B', 4, false) );
     notes.push( new Note('L', 8, false) );
     notes.push( new Note('R', 12, false) );
@@ -26,7 +26,19 @@ NoteManager.prototype.getNotes = function(){
     notes.push( new Note('T', 16, true) );
     notes.push( new Note('B', 20, true) );
     notes.push( new Note('L', 24, true) );
-    notes.push( new Note('R', 28, true) );
+    notes.push( new Note('R', 28, true) );*/
+    var position = 0;
+    var input = '';
+
+    for (var i = 0; i < 100; i++) {
+        if (i % 2 == 0) {
+            input = 'B';
+        } else {
+            input = 'T';
+        }
+        notes.push( new Note(input, position, false));
+        position += 4;
+    }
 
     return notes;
 };

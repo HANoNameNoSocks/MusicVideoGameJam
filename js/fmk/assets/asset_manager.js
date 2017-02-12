@@ -6,6 +6,8 @@ function AssetManager() {
     this.animManager = null;
     this.cropManager = null;
 
+    this.totalAssetsLoaded = 0;
+
     this._init();
 };
 
@@ -37,6 +39,11 @@ AssetManager.prototype.getSpritesheet = function(name) {
 
 AssetManager.prototype.getAnimation = function(name) {
    return this.animManager.getAnimation(name);
+};
+
+AssetManager.prototype.getSound = function(name) {
+    LOGGER.log("fetching sound : " + name);
+    return this.assetLoader.getSound(name);
 };
 
 AssetManager.prototype.copyAnimation = function(sourceName) {
